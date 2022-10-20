@@ -3,7 +3,7 @@ from flask_restful import Api
 
 from core.routes.product.product import Product
 
-product_blueprint = Blueprint("product", __name__, url_prefix="/product")
+product_blueprint = Blueprint("product", __name__, url_prefix="/products")
 
 product_api = Api(product_blueprint)
 
