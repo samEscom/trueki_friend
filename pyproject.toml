@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "trueki-friend"
+version = "0.1.0"
+description = ""
+authors = ["Samuel Chavez <sa5m.escom@gmail.com>"]
+readme = "README.md"
+packages = [{include = "trueki_friend"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "*"
+pymysql = "*"
+flask-restful = "*"
+simplejson = "*"
+cryptography = "*"
+sqlalchemy = "*"
+python-dotenv = "*"
+flask-jwt-extended = "^4.4.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

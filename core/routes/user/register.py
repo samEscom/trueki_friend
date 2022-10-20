@@ -3,7 +3,7 @@ from flask_restful import Resource
 
 from core.models.user.user_model import UserModel
 from core.models import session
-import hashlib
+from core.utils.users import str_to_hash
 
 
 class Register(Resource):
@@ -13,12 +13,12 @@ class Register(Resource):
 
         name = payload.get("name")
         email = payload.get("email")
-        password = hashlib.md5(payload.get("password").encode())
+        password = str_to_hash(payload.get("password"))
 
         user = UserModel(
             user_name=name,
             user_email=email,
-            user_password=password.hexdigest()
+            user_password=password
         )
         session.add(user)
         session.commit()
