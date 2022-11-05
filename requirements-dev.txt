@@ -1,6 +1,1 @@
-flask == *
-pymysql == *
-flask-restful == *
-simplejson == *
-cryptography == *
 

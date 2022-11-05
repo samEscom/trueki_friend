@@ -1,0 +1,19 @@
+web:
+    build: .
+    ports:
+        - "5000:5000"
+        - "3306:3307"
+    container_name: api
+    stdin_open: true
+    tty: true
+    env_file:
+        - ./.env.dev
+    environment:
+        DB_USERNAME: ${DB_USERNAME}
+        DB_PASSWORD: ${DB_PASSWORD}
+        DB_NAME: ${DB_NAME}
+        DB_PORT: ${DB_PORT}
+        DB_HOST: ${DB_HOST}
+    external_links:
+        - mysql
+    restart: on-failure
